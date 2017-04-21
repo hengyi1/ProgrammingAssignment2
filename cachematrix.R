@@ -3,8 +3,13 @@
 
 ## Write a short comment describing this function
 
+
+## This function is creating a object that store a matrix and caches its inverse.
+## This function tries to caching the inverse of matrix and aviod repeating the 
+## calculation by couputer.
+
 makeCacheMatrix <- function(x = matrix()) {
-in<-NULL
+        in<-NULL
         set<-function(y) {
                 x<<-y
                 in<<-NULL
@@ -18,12 +23,15 @@ in<-NULL
         getinverse=getinverse)
 }
 
-
+## This function calculates the inverse of the matrix created by 
+## makeCacheMatrix function. If there is an inverse for the matrix, it should 
+## retrive the inverse from the cache.
+                               
 ## Write a short comment describing this function
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-         in<-x$getinverse()
+        in<-x$getinverse()
         if(!is.null(in)){
             message('getting cached data')
             return(in)
